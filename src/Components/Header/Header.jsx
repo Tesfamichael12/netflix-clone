@@ -6,10 +6,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import netflixLogo from "../../assets/images/Netflix_2015_logo.svg";
 import netflixAvatar from "../../assets/images/Netflix-avatar.png";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
   const [show, setShow] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,13 @@ function Header() {
           >
             <MenuIcon className="header__icon" />
           </button>
-          <img className="header__logo" src={netflixLogo} alt="Netflix Logo" />
+          <Link to="/home">
+            <img
+              className="header__logo"
+              src={netflixLogo}
+              alt="Netflix Logo"
+            />
+          </Link>
         </div>
         <nav className={`header__nav${menuOpen ? " header__nav--open" : ""}`}>
           {menuOpen && (
@@ -54,11 +62,36 @@ function Header() {
               <CloseIcon className="header__icon" />
             </button>
           )}
-          <a href="#">Home</a>
-          <a href="#">TV Shows</a>
-          <a href="#">Movies</a>
-          <a href="#">New & Popular</a>
-          <a href="#">My List</a>
+          <Link
+            to="/home"
+            className={location.pathname === "/home" ? "active" : ""}
+          >
+            Home
+          </Link>
+          <Link
+            to="/tv-shows"
+            className={location.pathname === "/tv-shows" ? "active" : ""}
+          >
+            TV Shows
+          </Link>
+          <Link
+            to="/movies"
+            className={location.pathname === "/movies" ? "active" : ""}
+          >
+            Movies
+          </Link>
+          <Link
+            to="/new-popular"
+            className={location.pathname === "/new-popular" ? "active" : ""}
+          >
+            New & Popular
+          </Link>
+          <Link
+            to="/my-list"
+            className={location.pathname === "/my-list" ? "active" : ""}
+          >
+            My List
+          </Link>
         </nav>
         <div className="header__right">
           <SearchIcon className="header__icon" />

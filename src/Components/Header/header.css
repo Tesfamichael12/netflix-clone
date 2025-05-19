@@ -8,7 +8,6 @@
     backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
   backdrop-filter: none;
-  margin-bottom: 64px;
 }
 
 .header--scrolled {
@@ -28,18 +27,20 @@
 .header__left {
   display: flex;
   align-items: center;
+  gap: 2.5vw;
+  margin-right: 10px;
 }
 
 .header__logo {
   height: 32px;
   margin-left: 16px;
-  margin-right: 8px;
+  margin-right: 1.5vw;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }
 
 .header__nav {
   display: flex;
-  gap: 18px;
+  gap: 2vw;
   align-items: center;
   transition: all 0.3s;
   margin-bottom: 0;
@@ -128,11 +129,6 @@
   z-index: 999;
 }
 
-.header-spacer {
-  height: 64px;
-  width: 100%;
-}
-
 @media (max-width: 900px) {
   .header__content {
     justify-content: space-between;
@@ -170,7 +166,7 @@
   }
   .header__logo {
     margin-left: 0;
-    margin-right: 0;
+    margin-right: 5px;
   }
   .header__right {
     gap: 10px;
