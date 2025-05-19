@@ -72,7 +72,8 @@ function Home() {
       <Hero onPlayTrailer={handlePlayTrailer} />
       <div className="home__rows">
         {Object.entries(requests).map(([key, url]) => {
-          if (key === "fetchNetflixOriginals") return null;
+          if (key === "fetchNetflixOriginals" || key === "fetchPopularPeople")
+            return null;
 
           const title = key
             .replace("fetch", "")

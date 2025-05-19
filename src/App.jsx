@@ -13,13 +13,13 @@ function App() {
       <ToastContainer
         position="top-right"
         autoClose={5000}
-        hideProgressBar={true}
+        hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss={false}
         draggable={false}
-        pauseOnHover={false}
+        pauseOnHover={true}
         theme="dark"
         style={{ zIndex: 9999 }}
       />
