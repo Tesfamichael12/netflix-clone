@@ -12,6 +12,7 @@
 .row__list {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden; /* Hide vertical scroll */
   padding-left: 2vw;
   gap: 0.8vw;
   scrollbar-width: none;
