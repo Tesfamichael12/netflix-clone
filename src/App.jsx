@@ -1,15 +1,29 @@
-import { useState } from "react";
+import React from "react";
+import Header from "./Components/Header/Header";
+import { Outlet } from "react-router-dom";
+import Footer from "./Components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import Home from "./Pages/Home";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 
 function App() {
   return (
     <>
       <Header />
-      <div className="header-spacer" />
-      <Home />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="dark"
+        style={{ zIndex: 9999 }}
+      />
+      <Outlet />
       <Footer />
     </>
   );
