@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Header />
+      <div className="header-spacer" />
       <Home />
       <Footer />
     </>
